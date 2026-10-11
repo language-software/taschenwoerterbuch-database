@@ -1,0 +1,22 @@
+name: release-data
+on:
+  push:
+    tags: ["data-*"]
+permissions:
+  contents: write
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: scripts/fetch_sources.sh
+      - run: python scripts/build_dictionary.py --pair fr-de
+      - run: python scripts/build_dictionary.py --pair de-fr
+      - run: python scripts/make_manifest.py "$GITHUB_REF_NAME"
+      - run: >
+          gh release create "$GITHUB_REF_NAME" dist/*.gz dist/manifest.json
+          --title "$GITHUB_REF_NAME" --generate-notes

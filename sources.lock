@@ -1,0 +1,15 @@
+# Single place for all pinned source versions. Read by scripts/fetch_sources.sh (CI and local).
+# Shell syntax: KEY=value, no spaces around "=".
+
+# Wiktextract snapshot: GitHub release in this repo (manual, see README section D)
+SOURCES_TAG=sources-2026.10
+
+# FreeDict (download.freedict.org keeps old versions)
+FREEDICT_VERSION=2025.11.23
+FREEDICT_FRA_DEU_SHA256=34c3bed2df6c7678299d8bcece93d0f60c85a4948a9f78aa8aa1f86b673acc29
+FREEDICT_DEU_FRA_SHA256=1469f862604660d1ee9b9bdc65574c66385b24aa440cdefc0f6cf48c35f736dd
+
+# Verbiste (sources.debian.org, immutable per version)
+VERBISTE_VERSION=0.1.49-1
+VERBISTE_VERBS_SHA256=2d42d5f23faa872e2b7618c19539a4be01cc9ca49d4dea0af245d734dee770d8
+VERBISTE_CONJUGATION_SHA256=2465f0405118a2dc2618b1fb5139b746ce8b13218e17ef032417a63483d802a8

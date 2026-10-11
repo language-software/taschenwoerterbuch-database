@@ -1,0 +1,7 @@
+ {
+   "min_app_version": "1.0.0",
+   "datasets": {
+     "dictionary-de-fr": { "version": 1, "schema": 1 },
+     "dictionary-fr-de": { "version": 1, "schema": 1 }
+   }
+ }
